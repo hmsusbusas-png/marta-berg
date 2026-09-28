@@ -70,6 +70,7 @@
   const galleryItems = Array.prototype.slice.call(document.querySelectorAll('.masonry__item'));
 
   let currentIndex = -1;
+  let lastFocused = null;
 
   function openLightbox(index) {
     if (!lightbox || !lightboxImg || !lightboxCaption) return;
@@ -77,11 +78,13 @@
     const img = item ? item.querySelector('img') : null;
     if (!img) return;
     currentIndex = index;
+    lastFocused = document.activeElement;
     lightboxImg.src = img.currentSrc || img.src;
     lightboxImg.alt = img.alt || '';
     lightboxCaption.textContent = item.getAttribute('data-caption') || img.alt || '';
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
+    if (btnClose) btnClose.focus();
   }
 
   function closeLightbox() {
@@ -89,6 +92,8 @@
     lightbox.hidden = true;
     currentIndex = -1;
     document.body.style.overflow = '';
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    lastFocused = null;
   }
 
   function stepLightbox(delta) {
@@ -99,7 +104,17 @@
 
   if (lightbox && lightboxImg) {
     galleryItems.forEach(function (item, index) {
+      // button-like доступ с клавиатуры
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'Open photo: ' + (item.getAttribute('data-caption') || 'gallery image'));
       item.addEventListener('click', function () { openLightbox(index); });
+      item.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          openLightbox(index);
+        }
+      });
     });
 
     if (btnClose) btnClose.addEventListener('click', closeLightbox);
@@ -109,6 +124,22 @@
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox || e.target.classList.contains('lightbox__figure')) {
         closeLightbox();
+      }
+    });
+
+    // фокус не покидает открытый лайтбокс
+    lightbox.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      const focusables = [btnClose, btnPrev, btnNext].filter(Boolean);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     });
 

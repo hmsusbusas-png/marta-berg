@@ -6,13 +6,13 @@
   <title>Marta Berg — Photographer in Saint Petersburg</title>
   <meta name="description" content="Marta Berg is a portrait, wedding and editorial photographer based in Saint Petersburg. Natural light, honest stories, timeless images.">
   <meta name="author" content="Marta Berg">
-  <link rel="canonical" href="https://martaberg.com/">
+  <link rel="canonical" href="https://hmsusbusas-png.github.io/marta-berg/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Marta Berg — Photographer in Saint Petersburg">
   <meta property="og:description" content="Portrait, wedding and editorial photography. Saint Petersburg.">
-  <meta property="og:url" content="https://martaberg.com/">
-  <meta property="og:image" content="https://picsum.photos/seed/marta-og/1200/630">
+  <meta property="og:url" content="https://hmsusbusas-png.github.io/marta-berg/">
+  <meta property="og:image" content="https://hmsusbusas-png.github.io/marta-berg/screenshots/desktop.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -213,7 +213,7 @@
           <span class="form__error" data-error-for="message"></span>
         </label>
         <button class="form__submit" type="submit">Send request</button>
-        <p class="form__success" id="formSuccess" hidden>Thank you — your message is on its way. I will reply within two working days.</p>
+        <p class="form__success" id="formSuccess" role="status" hidden>Thank you — your message is on its way. I will reply within two working days.</p>
       </form>
     </div>
   </section>
@@ -224,11 +224,12 @@
   <div class="container footer__row">
     <span>© 2025 Marta Berg</span>
     <span>Saint Petersburg</span>
+    <span>Concept portfolio — contact details are demo</span>
     <a href="#top">Back to top</a>
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" hidden>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
   <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
   <button class="lightbox__arrow lightbox__arrow--prev" id="lightboxPrev" aria-label="Previous image">&#8592;</button>
   <figure class="lightbox__figure">
