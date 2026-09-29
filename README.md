@@ -1,60 +1,57 @@
-# Marta Berg — Photographer Portfolio
+# Marta Berg — сайт-портфолио фотографа
 
-A minimal single-page portfolio for a Saint Petersburg photographer working in portrait, wedding and editorial photography. Built with vanilla HTML, CSS and JavaScript — no frameworks, no build step.
+Одностраничное портфолио фотографа из Санкт-Петербурга: портрет, свадьбы, editorial. Фотограф вымышленный, это концепт для портфолио — снимки и контакты демонстрационные. Ванильные HTML, CSS и JavaScript, без фреймворков и сборки.
 
-## Quick start
+**Живой сайт:** [hmsusbusas-png.github.io/marta-berg](https://hmsusbusas-png.github.io/marta-berg/)
 
-Open `index.html` in a browser, or serve the folder locally:
+![Marta Berg, десктопная версия](screenshots/desktop.png)
 
-```bash
-npx serve .
-# or
+## Что внутри
+
+- Фиксированная навигация с бургер-меню на мобильных
+- Полноэкранный hero с крупной display-типографикой
+- Секция избранных работ: три больших фото с ленивой загрузкой
+- Masonry-галерея на CSS columns: фото плавно проявляются после загрузки, при наведении зум
+- Лайтбокс с навигацией по Esc и стрелкам, подписи к кадрам
+- Блок «Обо мне» с биографией и ключевыми фактами
+- Услуги с ценами, отзывы, форма заявки с клиентской валидацией и состоянием успешной отправки
+- Плавный скролл по якорям, reveal-анимации, SEO и Open Graph мета-теги, SVG favicon
+
+## Как посмотреть
+
+Открыть `index.html` в браузере — этого хватит. Вариант с локальным сервером:
+
+```powershell
+# PowerShell, из папки проекта
 python -m http.server 8000
+# дальше открыть http://localhost:8000
 ```
 
-## Features
+(или `npx serve .`, если удобнее Node)
 
-- Fixed minimal navigation with mobile burger menu
-- Fullscreen hero with oversized display typography
-- Featured work section with three large lazy-loaded images
-- Masonry gallery (CSS columns) with fade-in on image load and hover zoom
-- Lightbox with Escape / arrow-key navigation and captions
-- About section with biography and key facts
-- Services with pricing, testimonials, contact form with client-side validation and success state
-- Smooth anchor scrolling and reveal-on-scroll animations
-- Responsive layout, SVG favicon, SEO meta and Open Graph tags
+## Честно об ограничениях
 
-## Structure
+- Форма заявки ничего не отправляет: валидация и «спасибо» отрабатывают на клиенте, бэкенда нет
+- Все фотографии — заглушки с picsum.photos, к реальным работам отношения не имеют
+- Имя, биография, цены и контакты демонстрационные
+
+## Структура
 
 ```
-index.html
-css/style.css
-js/main.js
-favicon.svg
-screenshots/   (desktop.png, mobile.png)
+marta-berg/
+├── index.html        # разметка
+├── css/style.css     # стили, masonry на CSS columns
+├── js/main.js        # меню, галерея, лайтбокс, форма, reveal-анимации
+├── screenshots/      # desktop.png, mobile.png
+└── favicon.svg
 ```
+
+## Стек
+
+HTML, CSS, ванильный JavaScript. Галерея — чистый CSS columns, лайтбокс написан руками, библиотек нет.
 
 ---
 
-## Портфолио фотографа Marta Berg (RU)
+## EN
 
-Минимальный одностраничный сайт-портфолио вымышленного фотографа из Санкт-Петербурга: портрет, свадьбы, editorial. Изображения и контакты демонстрационные. Чистые HTML, CSS и JavaScript, без фреймворков и сборки.
-
-### Быстрый старт
-
-Откройте `index.html` в браузере или запустите локальный сервер:
-
-```bash
-npx serve .
-```
-
-### Возможности
-
-- Фиксированная навигация с бургер-меню на мобильных
-- Полноэкранный hero с крупной типографикой
-- Галерея masonry с плавным появлением фото и лайтбоксом (Esc, стрелки)
-- Блок «Обо мне», услуги с ценами, отзывы
-- Форма заявки с валидацией и состоянием успешной отправки
-- Адаптивность, SVG favicon, SEO и Open Graph мета-теги
-
-Скриншоты: `screenshots/desktop.png` и `screenshots/mobile.png` (будут добавлены позже).
+Single-page portfolio for a fictional Saint Petersburg photographer (portrait, wedding, editorial). Vanilla HTML/CSS/JS, no build step: masonry gallery on CSS columns, lightbox with Esc/arrow navigation, contact form with client-side validation. Photos are picsum placeholders, contacts are demo. Open `index.html` or run `python -m http.server 8000`. Live: https://hmsusbusas-png.github.io/marta-berg/
