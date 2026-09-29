@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  // Mobile nav
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -21,7 +20,6 @@
     });
   }
 
-  // Header border after scrolling past the top
   const header = document.querySelector('.site-header');
   if (header) {
     const onScroll = function () {
@@ -31,7 +29,6 @@
     onScroll();
   }
 
-  // Fade-in images once loaded
   const images = Array.prototype.slice.call(document.querySelectorAll('img'));
   images.forEach(function (img) {
     img.setAttribute('data-loaded', 'false');
@@ -44,7 +41,6 @@
     }
   });
 
-  // Reveal on scroll
   const revealItems = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealItems.length) {
     const io = new IntersectionObserver(function (entries) {
@@ -60,7 +56,6 @@
     revealItems.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
@@ -104,7 +99,6 @@
 
   if (lightbox && lightboxImg) {
     galleryItems.forEach(function (item, index) {
-      // button-like доступ с клавиатуры
       item.setAttribute('tabindex', '0');
       item.setAttribute('role', 'button');
       item.setAttribute('aria-label', 'Open photo: ' + (item.getAttribute('data-caption') || 'gallery image'));
@@ -127,7 +121,6 @@
       }
     });
 
-    // фокус не покидает открытый лайтбокс
     lightbox.addEventListener('keydown', function (e) {
       if (e.key !== 'Tab') return;
       const focusables = [btnClose, btnPrev, btnNext].filter(Boolean);
@@ -151,11 +144,9 @@
     });
   }
 
-  // Keep the year current in the small footer label.
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Contact form validation
   const form = document.getElementById('contactForm');
   if (form) {
     const success = document.getElementById('formSuccess');

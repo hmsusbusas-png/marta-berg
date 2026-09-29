@@ -47,8 +47,6 @@ img { display: block; max-width: 100%; }
   margin-bottom: 3rem;
 }
 
-/* Nav */
-
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -122,8 +120,6 @@ img { display: block; max-width: 100%; }
 .nav__toggle.is-open span:first-child { transform: translateY(3.75px) rotate(45deg); }
 .nav__toggle.is-open span:last-child { transform: translateY(-3.75px) rotate(-45deg); }
 
-/* Hero */
-
 .hero {
   position: relative;
   height: 100svh;
@@ -185,8 +181,6 @@ img { display: block; max-width: 100%; }
   50% { transform: translate(-50%, 8px); }
 }
 
-/* Featured */
-
 .featured__grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr 1fr;
@@ -207,8 +201,6 @@ img { display: block; max-width: 100%; }
   color: var(--muted);
 }
 
-/* Masonry gallery */
-
 .masonry {
   columns: 3;
   column-gap: 1.5rem;
@@ -228,12 +220,8 @@ img { display: block; max-width: 100%; }
 
 .masonry__item:hover img { transform: scale(1.04); }
 
-/* Lazy fade-in */
-
 img[data-loaded="false"] { opacity: 0; }
 img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
-
-/* About */
 
 .about__grid {
   display: grid;
@@ -270,8 +258,6 @@ img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
   color: var(--muted);
 }
 
-/* Services */
-
 .services__list { display: grid; gap: 0; }
 
 .service {
@@ -300,8 +286,6 @@ img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
   white-space: nowrap;
 }
 
-/* Testimonials */
-
 .testimonials__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -328,8 +312,6 @@ img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
   text-transform: uppercase;
   color: var(--muted);
 }
-
-/* Contact */
 
 .contact__grid {
   display: grid;
@@ -420,8 +402,6 @@ img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
   padding: 1rem 1.25rem;
 }
 
-/* Footer */
-
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 2rem 0;
@@ -441,13 +421,10 @@ img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
   text-decoration: none;
 }
 
-/* keyboard focus on gallery tiles acting as buttons */
 .masonry__item:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 4px;
 }
-
-/* Lightbox */
 
 .lightbox {
   position: fixed;
@@ -505,8 +482,6 @@ img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
 .lightbox__arrow--prev { left: 1rem; top: 50%; transform: translateY(-50%); }
 .lightbox__arrow--next { right: 1rem; top: 50%; transform: translateY(-50%); }
 
-/* Reveal on scroll */
-
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -523,8 +498,6 @@ img[data-loaded="true"] { opacity: 1; transition: opacity 0.7s ease; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero__scroll { animation: none; }
 }
-
-/* Responsive */
 
 @media (max-width: 900px) {
   .section { padding: 5rem 0; }
