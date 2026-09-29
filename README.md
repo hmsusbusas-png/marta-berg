@@ -31,14 +31,14 @@ index.html
 css/style.css
 js/main.js
 favicon.svg
-screenshots/   (desktop.png, mobile.png — to be added)
+screenshots/   (desktop.png, mobile.png)
 ```
 
 ---
 
 ## Портфолио фотографа Marta Berg (RU)
 
-Минимальный одностраничный сайт-портфолио вымышленного фотографа из Санкт-Петербурга: портрет, свадьбы, editorial. Чистые HTML, CSS и JavaScript, без фреймворков и сборки.
+Минимальный одностраничный сайт-портфолио вымышленного фотографа из Санкт-Петербурга: портрет, свадьбы, editorial. Изображения и контакты демонстрационные. Чистые HTML, CSS и JavaScript, без фреймворков и сборки.
 
 ### Быстрый старт
 

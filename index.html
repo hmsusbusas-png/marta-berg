@@ -26,7 +26,7 @@
 <header class="site-header" id="top">
   <nav class="nav container">
     <a class="nav__brand" href="#top">Marta Berg</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
@@ -45,7 +45,7 @@
     <img class="hero__img" src="https://picsum.photos/seed/marta-hero/1920/1280" alt="Misty morning on the Neva embankment, Saint Petersburg" fetchpriority="high">
     <div class="hero__overlay">
       <h1 class="hero__title">Marta<br><em>Berg</em></h1>
-      <p class="hero__sub">Photographer — Saint&nbsp;Petersburg</p>
+      <p class="hero__sub">Photographer · Saint&nbsp;Petersburg</p>
     </div>
     <a class="hero__scroll" href="#work" aria-label="Scroll to work">Scroll</a>
   </section>
@@ -179,8 +179,8 @@
         <h2 class="section__title reveal">Contact</h2>
         <p class="reveal">Tell me a little about yourself and what you are planning. I answer within two working days.</p>
         <p class="contact__lines reveal">
-          <a href="mailto:hello@martaberg.com">hello@martaberg.com</a><br>
-          <a href="https://instagram.com/marta.berg.photo" rel="noopener" target="_blank">instagram.com/marta.berg.photo</a>
+          Contact details in this portfolio version are placeholders.<br>
+          Email and Instagram can be connected for a real client project.
         </p>
       </div>
       <form class="form reveal" id="contactForm" novalidate>
@@ -222,7 +222,7 @@
 
 <footer class="site-footer">
   <div class="container footer__row">
-    <span>© 2025 Marta Berg</span>
+    <span>© <span id="year">2026</span> Marta Berg</span>
     <span>Saint Petersburg</span>
     <span>Concept portfolio — contact details are demo</span>
     <a href="#top">Back to top</a>

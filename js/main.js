@@ -77,8 +77,8 @@
     const item = galleryItems[index];
     const img = item ? item.querySelector('img') : null;
     if (!img) return;
+    if (currentIndex === -1) lastFocused = document.activeElement;
     currentIndex = index;
-    lastFocused = document.activeElement;
     lightboxImg.src = img.currentSrc || img.src;
     lightboxImg.alt = img.alt || '';
     lightboxCaption.textContent = item.getAttribute('data-caption') || img.alt || '';
@@ -150,6 +150,10 @@
       if (e.key === 'ArrowRight') stepLightbox(1);
     });
   }
+
+  // Keep the year current in the small footer label.
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 
   // Contact form validation
   const form = document.getElementById('contactForm');
